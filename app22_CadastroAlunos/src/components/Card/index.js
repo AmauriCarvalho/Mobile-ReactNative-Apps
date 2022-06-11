@@ -16,7 +16,7 @@ function Card({data, funcCarregarTarefas}){
   const navigation = useNavigation();
  
   async function irFormulario(){
-      navigation.navigate('Formulario', { id: id, title: title, description: description, atualizarLista: funcCarregarTarefas});
+      navigation.navigate('Cadastro', { id: id, title: title, description: description, atualizarLista: funcCarregarTarefas});
   }
  
  
@@ -24,16 +24,16 @@ function Card({data, funcCarregarTarefas}){
     <View>
      
       <View style={styles.card}>
-        <Text style={styles.titulo}>{title}</Text>
+        <Text style={styles.titulo}>Nome: {title}</Text>
        
-        <Text style={styles.descricao}>{description}</Text>
+        <Text style={styles.titulo}>Curso: {description}</Text>
  
         <TouchableOpacity style={styles.buttonEditar} onPress={irFormulario}>
-          <Text>Editar</Text>
+          <Text style={styles.textoEditar}>Editar</Text>
         </TouchableOpacity>
  
         <TouchableOpacity style={styles.buttonExcluir} onPress={excluirTarefa}>
-          <Text>Excluir</Text>
+          <Text style={styles.textoExcluir}>-</Text>
         </TouchableOpacity>
       </View>
  
@@ -51,33 +51,26 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     borderRadius: 5,
     elevation: 3,
+    flexDirection: 'row',
   },
   titulo:{
     fontSize: 18,
     padding: 15,
   },
-  descricao:{
-    fontSize: 10,
-    padding: 15,
-  },
   buttonEditar: {
-    borderRadius: 5,
-    marginVertical: 20,
-    alignSelf: 'flex-start',
-    backgroundColor: "yellow",
-    marginVertical: 0,
-    marginLeft: 10
+  
   },
   buttonExcluir: {
-    borderRadius: 5,
-    marginVertical: 20,
-    alignSelf: 'flex-start',
-    backgroundColor: "gray",
-    marginVertical: 0,
-    marginLeft: 10,
-    backgroundColor: "tomato",
-    marginTop: 10,
-    marginBottom: 10
+  },
+  textoExcluir: {
+    fontSize: 50,
+    color: "red",
+    textAlign: 'right',
+  },
+  textoEditar: {
+    fontSize:20,
+    color: "#000",
+    textAlign: 'left',
   },
 });
  

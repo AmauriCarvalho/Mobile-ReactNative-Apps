@@ -21,7 +21,7 @@ export default function Tarefas() {
   const navigation = useNavigation();
  
   async function irFormulario(){
-      navigation.navigate('Formulario', {atualizarLista: carregarTarefas});
+      navigation.navigate('Cadastro', {atualizarLista: carregarTarefas});
   }
  
   if(loading){
@@ -33,8 +33,9 @@ export default function Tarefas() {
   }else{
     return(
       <View style={styles.container}>
-        <Button title="Incluir" onPress={irFormulario}/>
- 
+        <View style={[{ width: "25%", margin: 10}]}>
+        <Button color= "#037d01" title="+" onPress={irFormulario}/>
+        </View>
         <FlatList
         data={tarefas}
         keyExtractor={item => item.id.toString() }
@@ -64,6 +65,9 @@ const styles = StyleSheet.create({
   descricao:{
     fontSize: 10,
     padding: 15,
+  },
+  button:{
+    backgroundColor: '#000'
   },
   buttonEditar: {
     borderRadius: 5,

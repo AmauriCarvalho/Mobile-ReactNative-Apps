@@ -11,8 +11,8 @@ export default function App(){
   return(
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Tarefas" component={Tarefas} />
-        <Stack.Screen name="Formulario" component={Form} />
+        <Stack.Screen name="Alunos" component={Tarefas} />
+        <Stack.Screen name="Cadastro" component={Form} />
       </Stack.Navigator>
     </NavigationContainer>
   )
